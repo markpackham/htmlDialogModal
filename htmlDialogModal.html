@@ -39,11 +39,13 @@
         const modal = document.querySelector("[data-modal]")
 
         openButton.addEventListener("click", ()=>{
+            // opens Modal
             modal.showModal()
+            // This would open a non-modal dialog (with dialogs you can click around while a modal freezes the rest of the screen)
+            // modal.show()
         })
 
         closeButton.addEventListener("click", ()=>{
-            console.log("Hello2")
             modal.close()
         })
     </script>
