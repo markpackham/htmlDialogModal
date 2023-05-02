@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Dialog Modal Example</title>
+    <style>
+
+        .modal.open{
+           display: block;
+        }
+
+        .modal {
+            display:none;
+            position: fixed;
+            padding: 0.5rem;
+            top:50%;
+            left:50%;
+            translate: -50% -50%;
+            background: white;
+            border-radius: 0.25rem;
+            z-index: 100;
+        }
+
+    </style>
+</head>
+<body>
+    <button data-open-modal>Open</button>
+
+    <dialog data-modal class="modal">
+        <div>I am the Modal!!!!</div>
+        <button data-close-modal>Close</button>
+    </dialog>
+
+    <script>
+        const openButton = document.querySelector("[data-open-modal]")
+        const closeButton = document.querySelector("[data-close-modal]")
+        const modal = document.querySelector("[data-modal]")
+
+        openButton.addEventListener("click", ()=>{
+            modal.showModal()
+        })
+
+        closeButton.addEventListener("click", ()=>{
+            console.log("Hello2")
+            modal.close()
+        })
+    </script>
+</body>
+</html>
