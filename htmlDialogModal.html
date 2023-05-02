@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Html Dialog Modal Example</title>
+    <style>
+        /* this will impact the modals but not the dialogs */
+        dialog::backdrop{
+            background-color:red;
+        }
+    </style>
 </head>
 <body>
     <button data-open-modal>Open Modal</button>
