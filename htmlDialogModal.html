@@ -15,6 +15,7 @@
 <body>
     <button data-open-modal>Open Modal</button>
     <button data-open-dialog>Open Dialog</button>
+    <button data-open-dialog-form>Open Dialog Form</button>
 
     <!-- Thanks to dialog we don't need to waste time making an overlay -->
     <dialog data-modal>
@@ -31,17 +32,26 @@
         <button data-close-dialog>Close</button>
     </dialog>
 
-
+    <dialog data-dialog-form>
+        <form>
+            <input type="text">
+            <button type="submit" formmethod="dialog">Close Form but Don't Submit</button>
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
 
     <script>
         const openButton = document.querySelector("[data-open-modal]")
         const closeButton = document.querySelector("[data-close-modal]")
         const modal = document.querySelector("[data-modal]")
 
-
         const openButtonDialog = document.querySelector("[data-open-dialog]")
         const closeButtonDialog = document.querySelector("[data-close-dialog]")
         const dialog = document.querySelector("[data-dialog]")
+
+        const openButtonDialogForm = document.querySelector("[data-open-dialog-form]")
+        const dialogForm = document.querySelector("[data-dialog-form]")
+
 
         openButton.addEventListener("click", ()=>{
             // opens Modal
@@ -61,6 +71,10 @@
 
         closeButtonDialog.addEventListener("click", ()=>{
             dialog.close()
+        })
+
+        openButtonDialogForm.addEventListener("click", ()=>{
+            dialogForm.show()
         })
     </script>
 </body>
