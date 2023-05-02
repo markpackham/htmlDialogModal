@@ -7,18 +7,29 @@
     <title>Html Dialog Modal Example</title>
 </head>
 <body>
-    <button data-open-modal>Open</button>
+    <button data-open-modal>Open Modal</button>
+    <button data-open-dialog>Open Dialog</button>
 
     <!-- Thanks to dialog we don't need to waste time making an overlay -->
     <dialog data-modal>
-        <div>I am the Modal!!!!</div>
+        <div>I am the Modal! Close me or do nothing else on screen!!!!</div>
         <button data-close-modal>Close</button>
+    </dialog>
+
+    <dialog data-dialog>
+        <div>I am the Dialog, you are free to do what you want!!!!</div>
+        <button data-close-dialog>Close</button>
     </dialog>
 
     <script>
         const openButton = document.querySelector("[data-open-modal]")
         const closeButton = document.querySelector("[data-close-modal]")
         const modal = document.querySelector("[data-modal]")
+
+
+        const openButtonDialog = document.querySelector("[data-open-dialog]")
+        const closeButtonDialog = document.querySelector("[data-close-dialog]")
+        const dialog = document.querySelector("[data-dialog]")
 
         openButton.addEventListener("click", ()=>{
             // opens Modal
@@ -29,6 +40,15 @@
 
         closeButton.addEventListener("click", ()=>{
             modal.close()
+        })
+
+
+        openButtonDialog.addEventListener("click", ()=>{
+            dialog.show()
+        })
+
+        closeButtonDialog.addEventListener("click", ()=>{
+            dialog.close()
         })
     </script>
 </body>
